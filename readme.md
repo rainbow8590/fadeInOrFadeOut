@@ -7,13 +7,16 @@
 
 ####使用方法：
 #####html:
+    ```
     <div id="wrap"></div>
     注：div的id可以自己任意设置。
+    ```
 
 #####js：
+```
      调用方法:
-     1.在HTML页面引入fadeInOrfadeOut.js：
-        <script src="fadeInOrfadeOut.js"></script>  
+     1.在HTML页面引入fadeInOrfadeOut.js;
+        <script src="fadeInOrfadeOut.js"></script>.
      2.在script中调用：
         fadeInOrfadeOut({
             wrap:'#wrap',           //轮播图最外层的容器的id
@@ -28,3 +31,4 @@
             imgsALink:['http://www.slide1.com','http://www.slide2.com','http://www.slide3.com','http://www.slide4.com','http://www.slide5.com']
         });
         注： 因为class和id 在js中已经进行了处理，所以在设置参数的时候必须将前面的'.'或'#'加上
+```
