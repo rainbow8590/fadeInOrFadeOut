@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+#wrap{
+	width: 790px;
+	height: 340px;
+	margin: 100px auto;
+	border: 1px solid red;
+	position: relative;
+}
+#wrap a{
+	display: block;
+	width: 790px;
+	height: 340px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+#wrap .dot{
+	position: absolute;
+	left: 50%;
+	bottom: 10px;
+	z-index: 9999;
+	list-style: none;
+}
+#wrap .dot li{
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background: #fff;
+	display: inline-block;
+	margin-right: 10px;
+}
+#wrap .dot li.current{
+	background: #999;
+}
+#wrap #next,#wrap #prev{
+	position: absolute;
+	top: 50%;
+	margin-top: -30px;
+	width: 40px;
+	height: 60px;
+	background: rgba(255,255,255,.5);
+	color: #FFF;
+	z-index: 9999;
+	font-size: 30px;
+	text-align: center;
+	line-height: 60px;
+	font-family: '宋体';
+	cursor: pointer;
+	font-weight: 700;
+	display: none;
+}
+#wrap #next{
+	right: 0;
+}
+#wrap #prev{
+	left: 0;
+}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		
+	</div>
+
+	<script src="jquery-1.11.3/jquery.min.js"></script>
+	<script src="js/fadeInOrfadeOut.js"></script>
+	<script>
+	fadeInOrfadeOut({
+		wrap:'#wrap',
+		//imgs的父级元素的类名
+		imgsWrap:'.images',
+		//圆点的类名
+		dot:'.dot',
+		//小圆点当前的状态
+		dotCur:'current',
+		//img的路径
+		imgs:['images/slide-1.jpg','images/slide-2.jpg','images/slide-3.jpg','images/slide-4.jpg','images/slide-5.jpg'],
+		//img对应的链接
+		imgsALink:['http://www.slide1.com','http://www.slide2.com','http://www.slide3.com','http://www.slide4.com','http://www.slide5.com'],
+		//右箭头的id
+		nextId:'#next',
+		//左箭头的id
+		prevId:'#prev'
+	});
+	
+	</script>
+</body>
+</html>
