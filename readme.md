@@ -7,9 +7,7 @@
 
 使用方法：
 html:
-    <div id="wrap">
-        
-    </div>
+    <div id="wrap"></div>
     注：div的id可以自己任意设置。
 
 js：
