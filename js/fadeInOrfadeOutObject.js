@@ -1,6 +1,6 @@
 
 function FadeInOrfadeOut(option){
-
+	
 	this._init_(option);
 }
 
