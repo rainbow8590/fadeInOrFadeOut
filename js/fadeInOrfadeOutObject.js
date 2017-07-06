@@ -6,7 +6,7 @@ function FadeInOrfadeOut(option){
 
 FadeInOrfadeOut.prototype = {
 
-	// constructor : FadeInOrfadeOut,
+	 constructor : FadeInOrfadeOut,
 
 	_init_: function(option){
 		_this = this;
