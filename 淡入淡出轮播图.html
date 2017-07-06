@@ -72,8 +72,12 @@
 	</div>
 
 	<script src="jquery-1.11.3/jquery.min.js"></script>
+	<!-- 函数封装版本的js	 -->
 	<script src="js/fadeInOrfadeOut.js"></script>
+	<!-- 面向对象版本的js	 -->
+	<script src="js/fadeInOrfadeOutObject.js"></script>
 	<script>
+	//函数封装版本的调用
 	fadeInOrfadeOut({
 		wrap:'#wrap',
 		//imgs的父级元素的类名
@@ -91,6 +95,50 @@
 		//左箭头的id
 		prevId:'#prev'
 	});
+		
+		
+	//面向对象版本的调用
+		var slide = new FadeInOrfadeOut({
+			wrap:'#wrap',
+			//imgs的父级元素的类名
+			imgsWrap:'.images',
+			//圆点的类名
+			dot:'.dot',
+			//小圆点当前的状态
+			dotCur:'current',
+			//img的路径
+			imgs:['images/slide-1.jpg','images/slide-2.jpg','images/slide-3.jpg','images/slide-4.jpg','images/slide-5.jpg'],
+			//img对应的链接
+			imgsALink:['http://www.slide1.com','http://www.slide2.com','http://www.slide3.com','http://www.slide4.com','http://www.slide5.com'],
+			//右箭头的id
+			nextId:'#next',
+			//左箭头的id
+			prevId:'#prev'
+		});
+		//动态添加DOM
+		slide.add(); 
+		//自动轮播
+		slide.autoPlay();
+		//上一个箭头点击
+		$('#wrap #prev').click(function(){
+			slide.prevArrowClick()
+		})
+		//下一个箭头点击
+		$('#wrap #next').click(function(){
+			slide.nextArrowClick()
+		})
+		//鼠标经过
+		$('#wrap').mouseenter(function(){
+			slide.overContainer()
+		})
+		//鼠标离开
+		$('#wrap').mouseleave(function(){
+			slide.leaveContainer()
+		})
+		$('#wrap .dot li').click(function(){
+			slide.num = $(this).index();
+			slide.clickDot();
+		})
 	
 	</script>
 </body>
