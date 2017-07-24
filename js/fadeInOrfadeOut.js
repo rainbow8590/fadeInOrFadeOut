@@ -24,7 +24,7 @@
 		//设置圆点的margin-left值；让其居中；
 		$(option.dot).css('margin-left',-$(option.dot).find('li').outerWidth(true)*$(option.dot).find('li').length/2)
 		// 给第一个圆点添加当前样式
-		$(option.dot).find('li').first().addClass('current');
+		$(option.dot).find('li').first().addClass(option.current);
 
 		//在页面上添加左右箭头
 		var nextId = option.nextId.substr(1)
@@ -54,7 +54,7 @@
 	    /*运动一次的动画*/
 	    function autoplay(index){
 	        $(option.wrap).find('a').hide().eq(index).fadeIn();
-	        $(option.wrap).find(option.dot).find('li').removeClass("current").eq(index).addClass("current");
+	        $(option.wrap).find(option.dot).find('li').removeClass(option.current).eq(index).addClass(option.current);
 	    }
 
 	    /*鼠标点击y圆点跳转到相应图片*/
